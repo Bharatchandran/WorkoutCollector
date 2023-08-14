@@ -7,13 +7,10 @@
   <a href="{%url 'detail' workout.id%}">
     <div class="card-content">
       <h3>{{workout.name}}</h3>
-        <span class="card-title"><p>Breed: {{ workout.breed }}</p>
+        <span class="card-title"><p>Target: {{ workout.target }}</p>
             <p>Description: {{ workout.description |linebreaks }}</p>
-            {% if workout.age > 0 %}
-              <p>Age: {{ workout.age }}</p>
-            {% else %}
-              <p>Age: Kitten</p>
-            {% endif %}
+              <p>Reps: {{ workout.reps }}</p>
+              <p>Sets: {{workout.sets}}</p>
     </div>
   </a>
 </div>

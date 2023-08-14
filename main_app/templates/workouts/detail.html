@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Cat Details</h1>
+<h1>Workout Details</h1>
 
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ workout.name }}</span>
-    <p>Breed: {{ workout.breed }}</p>
+    <p>Target: {{ workout.target }}</p>
     <p>Description: {{ workout.description|linebreaks }}</p>
-    {% if workout.age > 0 %}
-      <p>Age: {{ workout.age }}</p>
-    {% else %}
-      <p>Age: Kitten</p>
-    {% endif %}
+      <p>Reps: {{ workout.reps }}</p>
+      <p>Sets: {{workout.sets}}</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'workouts_update' workout.id %}">Edit</a>
+    <a href="{% url 'workouts_delete' workout.id %}">Delete</a>
   </div>
 </div>
 
